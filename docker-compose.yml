@@ -1,0 +1,25 @@
+version : '3'
+
+services:
+  lb:
+    image: haproxy
+    ports: 
+      - "8080:8080"
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy
+  simplenode1:
+    image: simplenode
+    environment:
+      - APPID=1111
+  simplenode2:
+    image: simplenode
+    environment:
+      - APPID=2222
+  simplenode3:
+    image: simplenode
+    environment:
+      - APPID=3333
+  simplenode4:
+    image: simplenode
+    environment:
+      - APPID=4444
